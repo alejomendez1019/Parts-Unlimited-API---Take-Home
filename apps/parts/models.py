@@ -9,7 +9,9 @@ class Part(models.Model):
     is_active = models.BooleanField()
 
     def __str__(self):
-        return self.name  # Provides a readable representation of the model
+        # Provides a readable representation of the model
+        return self.name
 
     class Meta:
-        db_table = 'part'  # Specify the table name explicitly
+        # Specify the table name explicitly
+        db_table = 'part'
