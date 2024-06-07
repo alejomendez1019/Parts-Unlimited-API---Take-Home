@@ -21,6 +21,13 @@ def common_words(request):
     """
     Return the 5 most common words in part descriptions
     """
+    # Stop words to exclude from the analysis; useless words for the sales team
+    stop_words = set([
+        'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from',
+        'has', 'he', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the',
+        'to', 'was', 'were', 'will', 'with'
+    ])
+
     try:
         descriptions = Part.objects.values_list('description', flat=True)
 
@@ -32,13 +39,15 @@ def common_words(request):
         all_words = ' '.join(descriptions).lower()
         # Find all words
         words = re.findall(r'\b\w+\b', all_words)
-
         if not words:
             return Response({'message': 'No words found in descriptions'},
                             status=status.HTTP_204_NO_CONTENT)
 
+        # Remove stop words
+        filtered_words = [word for word in words if word not in stop_words]
+
         # Get the 5 most common words
-        common_words = Counter(words).most_common(5)
+        common_words = Counter(filtered_words).most_common(5)
 
         response_data = {
             'common_words': dict(common_words)
