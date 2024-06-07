@@ -1,0 +1,134 @@
+[
+    {
+        "model": "parts.part",
+        "pk": 1,
+        "fields": {
+            "name": "Heavy coil",
+            "sku": "SDJDDH8223DHJ",
+            "description": "Tightly wound nickel-gravy alloy spring",
+            "weight_ounces": 22,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 2,
+        "fields": {
+            "name": "Reverse lever",
+            "sku": "DCMM39823DSJD",
+            "description": "Attached to provide inverse leverage",
+            "weight_ounces": 9,
+            "is_active": false
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 3,
+        "fields": {
+            "name": "Macrochip",
+            "sku": "OWDD823011DJSD",
+            "description": "Used for heavy-load computing",
+            "weight_ounces": 2,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 4,
+        "fields": {
+            "name": "Gearbox",
+            "sku": "XDKF88234DJF",
+            "description": "Encased gears for mechanical motion",
+            "weight_ounces": 50,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 5,
+        "fields": {
+            "name": "Small coil",
+            "sku": "KSJD823JDZ",
+            "description": "Lightweight coil for smaller applications",
+            "weight_ounces": 5,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 6,
+        "fields": {
+            "name": "Microchip",
+            "sku": "MCHP9283JS",
+            "description": "Microchip for computing",
+            "weight_ounces": 1,
+            "is_active": false
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 7,
+        "fields": {
+            "name": "Hydraulic pump",
+            "sku": "HDP283JD",
+            "description": "Pump for hydraulic systems",
+            "weight_ounces": 120,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 8,
+        "fields": {
+            "name": "Piston",
+            "sku": "PSTN293JD",
+            "description": "Piston for combustion engines",
+            "weight_ounces": 30,
+            "is_active": false
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 9,
+        "fields": {
+            "name": "Turbine blade",
+            "sku": "TRBL19823D",
+            "description": "Blade for turbine systems",
+            "weight_ounces": 15,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 10,
+        "fields": {
+            "name": "Flywheel",
+            "sku": "FLYW22938D",
+            "description": "Flywheel for energy storage",
+            "weight_ounces": 40,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 11,
+        "fields": {
+            "name": "Control valve",
+            "sku": "CNTV19923D",
+            "description": "Valve for controlling fluid flow",
+            "weight_ounces": 8,
+            "is_active": true
+        }
+    },
+    {
+        "model": "parts.part",
+        "pk": 12,
+        "fields": {
+            "name": "Throttle body",
+            "sku": "THBD29834D",
+            "description": "Throttle body for air intake",
+            "weight_ounces": 25,
+            "is_active": false
+        }
+    }
+]
