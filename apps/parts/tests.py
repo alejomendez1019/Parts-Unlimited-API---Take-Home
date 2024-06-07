@@ -84,7 +84,7 @@ class CommonWordsTestCase(TestCase):
     def test_get_common_words(self):
         # Test basic functionality
 
-        response = self.client.get('/api/common-words/')
+        response = self.client.get('/api/parts/common-words/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertTrue('common_words' in response.data)
         # Check that common_words has the expected structure
@@ -96,7 +96,7 @@ class CommonWordsTestCase(TestCase):
         # test when there are no parts or descriptions in the database
 
         Part.objects.all().delete()
-        response = self.client.get('/api/common-words/')
+        response = self.client.get('/api/parts/common-words/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(response.data, {'message': 'No descriptions found'})
 
@@ -104,6 +104,6 @@ class CommonWordsTestCase(TestCase):
         # test when there are parts in the database but no words in the descriptions
         Part.objects.all().delete()
         Part.objects.create(name='Part4', sku='SKU4', description='', weight_ounces=5, is_active=True)
-        response = self.client.get('/api/common-words/')
+        response = self.client.get('/api/parts/common-words/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(response.data, {'message': 'No words found in descriptions'})
