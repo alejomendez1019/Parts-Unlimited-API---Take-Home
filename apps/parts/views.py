@@ -1,5 +1,6 @@
 import re
 from collections import Counter
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -10,16 +11,44 @@ from django.db import DatabaseError
 
 class PartViewSet(viewsets.ModelViewSet):
     """
-    ModelViewset provides the standard CRUD actions
+    retrieve:
+    Return the given part.
+
+    list:
+    Return a list of all the existing parts.
+
+    create:
+    Create a new part.
+
+    update:
+    Update an existing part.
+
+    partial_update:
+    Partially update an existing part.
+
+    destroy:
+    Delete a part.
+    """
+
+    """
+    ModelViewset provides the standard CRUD actions.
     """
     queryset = Part.objects.all()
     serializer_class = PartSerializer
 
 
+@swagger_auto_schema(
+    method='get',
+    responses={
+        200: "Successfully retrieved the common words.",
+        204: "No descriptions found or no words found in descriptions.",
+        500: "Database error occurred or other exceptions.",
+    }
+)
 @api_view(['GET'])
 def common_words(request):
     """
-    Return the 5 most common words in part descriptions
+    Return the 5 most common words in part descriptions, excluding common stop words.
     """
     # Stop words to exclude from the analysis; useless words for the sales team
     stop_words = set([
